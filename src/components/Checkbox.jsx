@@ -1,13 +1,12 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 
-const Checkbox = props => {
+const Checkbox = (props) => {
   const {
     onChange,
-    data: { id, description, done }
+    data: { id, description, done },
   } = props;
   return (
     <Fragment>
-      {}
       <svg
         viewBox="0 0 0 0"
         style={{ position: "absolute", zIndex: -1, opacity: 0 }}
@@ -31,7 +30,6 @@ const Checkbox = props => {
           defaultChecked={done}
           onChange={onChange}
         />
-        {}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xmlnsXlink="http://www.w3.org/1999/xlink"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const TodoForm = props => {
   const { handleAddItem } = props;
@@ -14,17 +14,14 @@ const TodoForm = props => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      {}
       <div className="todo-list">
         <div className="file-input">
-          {}
           <input
             type="text"
             className="text"
             value={description}
             onChange={e => setDescription(e.target.value)}
           />
-          {}
           <button
             className="button pink"
             disabled={description ? "" : "disabled"}

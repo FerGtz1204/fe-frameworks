@@ -1,11 +1,10 @@
-import React from 'react';
+import TodoList from './components/TodoList';
 import './App.scss';
-import Container from './components/Container';
 
 function App() {
   return (
     <div className="App">
-        <Container />
+        <TodoList />
     </div>);
 }
 
