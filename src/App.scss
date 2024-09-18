@@ -103,7 +103,7 @@ html {
   .todo__text {
     color: $colorText;
     text-align: left;
-    transition: all $duration/2 linear $duration/2;
+    transition: all calc($duration / 2) linear calc($duration / 2);
   }
 
   .todo__icon {
