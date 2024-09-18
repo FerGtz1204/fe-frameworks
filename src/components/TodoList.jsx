@@ -11,22 +11,17 @@ const TodoList = () => {
   };
 
   const onChangeItem = (changedItem) => {
-    console.log(list);
-    console.log(changedItem);
     const updateList = list.map((item) => {
       if (item.id === changedItem.id) {
         return { ...item, done: !item.done };
       }
       return item;
     });
-    console.log(updateList);
     setList(updateList);
   };
 
   const onCleanUpCompletedTasks = () => {
-    console.log(list);
     const updateList = list.filter((item) => !item.done);
-    console.log(updateList);
     setList(updateList);
   };
 
