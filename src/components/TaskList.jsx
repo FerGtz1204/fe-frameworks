@@ -3,13 +3,13 @@ import Checkbox from "./Checkbox";
 const TaskList = (props) => {
   const { list, setList } = props;
 
-  const onChangeStatus = (e) => {
-    const { name, checked } = e.target;
-
-    const updateList = list.map((item) => ({
-      ...item,
-      done: item.id === name ? checked : item.done,
-    }));
+  const onChangeStatus = (changedItem) => {
+    const updateList = list.map((item) => {
+      if (item.id === changedItem.id) {
+        return { ...item, done: !item.done };
+      }
+      return item;
+    });
     setList(updateList);
   };
 
@@ -19,7 +19,11 @@ const TaskList = (props) => {
   };
 
   const chk = list.map((item) => (
-    <Checkbox key={item.id} data={item} onChange={onChangeStatus} />
+    <Checkbox
+      key={item.id}
+      data={item}
+      onChange={(item) => onChangeStatus(item)}
+    />
   ));
   return (
     <div className="todo-list">
